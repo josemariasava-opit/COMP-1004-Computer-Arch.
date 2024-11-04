@@ -5,7 +5,7 @@ reg [3:0] value1,value2;
 wire [3:0] result;
 
 
-simple_add ut(
+simple_add test(
     .a(value1),
     .b(value2),
     .result(result)
@@ -20,7 +20,7 @@ initial begin
     value1 = 4'b0110; // 6
     value2 = 4'b1010; // 10
     #10;
-    Sdisplay ("Result of %b + lb is %b", value1, value2, result);
+    $display ("Result of %b + %b is %b", value1, value2, result);
 end
 
 
