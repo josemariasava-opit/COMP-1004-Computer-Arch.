@@ -1,0 +1,45 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x133704080 .scope module, "tb_simple_add" "tb_simple_add" 2 1;
+ .timescale 0 0;
+v0x600002fb41b0_0 .net "result", 3 0, L_0x600002cb0000;  1 drivers
+v0x600002fb4240_0 .var "value1", 3 0;
+v0x600002fb42d0_0 .var "value2", 3 0;
+S_0x1337041f0 .scope module, "test" "simple_add" 2 8, 3 2 0, S_0x133704080;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 4 "result";
+v0x600002fb4000_0 .net "a", 3 0, v0x600002fb4240_0;  1 drivers
+v0x600002fb4090_0 .net "b", 3 0, v0x600002fb42d0_0;  1 drivers
+v0x600002fb4120_0 .net "result", 3 0, L_0x600002cb0000;  alias, 1 drivers
+L_0x600002cb0000 .arith/sum 4, v0x600002fb4240_0, v0x600002fb42d0_0;
+    .scope S_0x133704080;
+T_0 ;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x600002fb4240_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x600002fb42d0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 19 "$display", "Result of %b + %b is %b", v0x600002fb4240_0, v0x600002fb42d0_0, v0x600002fb41b0_0 {0 0 0};
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x600002fb4240_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x600002fb42d0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 23 "$display", "Result of %b + %b is %b", v0x600002fb4240_0, v0x600002fb42d0_0, v0x600002fb41b0_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "simple_add_tb.v";
+    "simple_add.v";
