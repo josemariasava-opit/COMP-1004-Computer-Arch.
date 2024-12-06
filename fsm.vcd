@@ -1,0 +1,89 @@
+$date
+	Wed Dec  4 23:42:52 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fsm_tb $end
+$var wire 1 ! fsm_state $end
+$var reg 1 " COIN $end
+$var reg 1 # PUSH $end
+$var reg 1 $ clk $end
+$var reg 1 % reset $end
+$var reg 81 & string_state [80:0] $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 1 " coin $end
+$var wire 1 # push $end
+$var wire 1 % reset $end
+$var parameter 1 ' LOCKED $end
+$var parameter 1 ( UNLOCKED $end
+$var reg 1 ! state $end
+$var reg 1 ) working_state $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+1(
+0'
+$end
+#0
+$dumpvars
+0)
+b10011000100111101000011010010110100010101000100 &
+1%
+0$
+0#
+0"
+0!
+$end
+#10
+1$
+#20
+0$
+0%
+#30
+b101010101001110010011000100111101000011010010110100010101000100 &
+1!
+1)
+1$
+1"
+#40
+0$
+0"
+#50
+b10011000100111101000011010010110100010101000100 &
+0!
+0)
+1$
+1#
+#60
+0$
+0#
+#70
+1$
+1#
+#80
+0$
+0#
+#90
+b101010101001110010011000100111101000011010010110100010101000100 &
+1!
+1)
+1$
+1"
+#100
+0$
+0"
+#110
+1$
+#120
+0$
+#130
+1$
+#140
+0$
