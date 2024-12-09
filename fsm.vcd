@@ -1,5 +1,5 @@
 $date
-	Wed Dec  4 23:42:52 2024
+	Mon Dec  9 21:26:25 2024
 $end
 $version
 	Icarus Verilog
@@ -23,6 +23,10 @@ $var parameter 1 ' LOCKED $end
 $var parameter 1 ( UNLOCKED $end
 $var reg 1 ! state $end
 $var reg 1 ) working_state $end
+$upscope $end
+$scope task insert_coin $end
+$upscope $end
+$scope task push $end
 $upscope $end
 $upscope $end
 $enddefinitions $end

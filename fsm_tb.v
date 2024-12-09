@@ -20,6 +20,26 @@ fsm uut (
     .state(fsm_state)
 );
 
+// Static Task / Function to insert a coin 
+task insert_coin;
+    begin
+        #10; //wait 10 time units 
+        COIN = 1; 
+        #10; //wait 10 time units 
+        COIN = 0;
+    end 
+endtask
+
+// Static Task / Function to push 
+task push;
+    begin 
+        #10; //wait 10 time units 
+        PUSH = 1;
+        #10; //wait 10 time units 
+        PUSH = 0;
+    end
+endtask
+
 // Clock generation 
 initial begin
     clk = 0;
@@ -39,31 +59,19 @@ initial begin
 
     // Test Case 1: Insert coin when turnstile locked
     $display("\nTest 1: Insert coin when the turnstile state is %s \n", string_state);
-    #10;
-    COIN = 1;                      // Insert coin , set to 1 
-    #10;                           // Hold the coin for 25 time units
-    COIN = 0;                      // Remove coin, set to 0 
+    insert_coin();
 
     // Test Case 2: Push when turnstile unlocked
     $display("\nTest 2: Push when the turnstile state is %s \n", string_state);
-    #10;
-    PUSH = 1;                      // Push the turnstile, set to 1 
-    #10;
-    PUSH = 0;                      // Stop pushing, set to 0 
+    push();
 
     // Test Case 3: Push when turnstile locked
     $display("\nTest 3: Push when the turnstile state is %s \n", string_state);
-    #10;
-    PUSH = 1;                      // Push while locked, set to 1 
-    #10;
-    PUSH = 0;                      // Stop pushing, set to 0 
+    push();
 
     // Test Case 4: Insert coin when turnstile unlocked
     $display("\nTest 4: Insert coin when the turnstile state is %s \n", string_state);
-    #10;
-    COIN = 1;                      // Insert coin again, set to 1 
-    #10;                           // Hold the coin for 25 time units
-    COIN = 0;                      // Remove coin, set to 0 
+    insert_coin();
 
     // Finish simulation 
     #40;                          // wait 40 time unit
